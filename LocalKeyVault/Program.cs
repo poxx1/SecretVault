@@ -17,7 +17,12 @@ namespace LocalKeyVault
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+#if DEBUG
+            Application.Run(new MainUI());
+#else
+            Application.Run(new LoginUI());
+#endif
         }
     }
 }
